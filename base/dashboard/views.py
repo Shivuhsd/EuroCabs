@@ -27,13 +27,15 @@ def complaints(request):
 # Function to Display the Complaint to Admin
 
 def showComplaint(request, pk):
+    try:
+        data = users.models.ComplaintForm.objects.get(id = pk)
 
-    data = users.models.ComplaintForm.objects.get(id = pk)
-
-    context = {
-        'data': data
-    }
-    return render(request, 'admin/showComplaint.html', context)
+        context = {
+            'data': data
+        }
+        return render(request, 'admin/showComplaint.html', context)
+    except:
+        return custom404(request)
 
 #Function To Accept the Token
 
@@ -46,3 +48,8 @@ def tokenAccepted(request, pk):
     except:
         return JsonResponse({'status': 'failed'})
    
+
+
+
+def custom404(request, exception = None):
+    return render(request, 'admin/404.html', status=404)

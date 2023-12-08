@@ -24,7 +24,11 @@ def userLogin(request):
             print("Check Your Credentials...")
     return render(request, 'auth/login.html')
 
+# Function to Logout the User
 
+def userLogout(request):
+    logout(request)
+    return redirect('userLogin')
 
 # def adminLogin(request):
 #     return render(request, 'auth/adminlogin.html')

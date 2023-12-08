@@ -16,6 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.shortcuts import render
+
+
+
+
+handler404 = 'dashboard.views.custom404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +29,5 @@ urlpatterns = [
     path('dashboard/', include('dashboard.urls')),
     path('users/', include('users.urls')),
 ]
+
+
