@@ -16,12 +16,14 @@
         <p><b>Drop Point: </b>{{data.dropAddress}}</p>
         <p><b>Complaint Type: </b>{{data.complaintRegarding}}</p>
         <p><b>Description: </b>{{data.description}}</p>
+        {% if data.opened != True %}
         <button class="btn btn-primary" onclick="token()" id="tok">Accept Token</button>
         <button class="btn btn-primary" type="button" disabled id="spin" style="display: none;">
             <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
             <span role="status">Updating....</span>
         </button>
         <button type="button" class="btn btn-primary" disabled style="display: none;" id="Accepted">Token Accepted</button>
+        {%endif%}
    </div>
 
    
