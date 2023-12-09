@@ -12,4 +12,4 @@
 <http://127.0.0.1:8000/dashboard/complaints/>
 
 # To View a Perticular Complaint
-<http://127.0.0.1:8000/dashboard/<complaint_id>/showComplaint/>
+<http://127.0.0.1:8000/dashboard/--complaint_id--/showComplaint/>
